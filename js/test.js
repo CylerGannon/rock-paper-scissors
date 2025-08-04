@@ -1,36 +1,3 @@
-function getRandomIntInclusive(min, max) {
-  const minCeiled = Math.ceil(min);
-  const maxFloored = Math.floor(max);
-  return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); // The maximum is inclusive and the minimum is inclusive
-}
-
-function getComputerChoice () {
-    const min = 0;
-    const max = 2;
-
-    const rock = 0;
-    const paper = 1;
-    const scissors = 2;
-
-    const randomInt = getRandomIntInclusive(0, 2);
-
-    if (randomInt == rock) {
-        return "ROCK";
-    } else {
-        if (randomInt == paper) {
-            return "PAPER";
-        } else {
-            return "SCISSORS";
-        }
-    }
-}
-
-function getHumanChoice() {
-  let choice = prompt("Please type rock, paper, or scissors");
-  choice = choice.toUpperCase();
-  return choice;
-}
-
 function playRound(humanChoice, computerChoice) {
     
     let computerScore = 0;
@@ -91,9 +58,7 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+const humanSelection = "ROCK";
+const computerSelection = "SCISSORS";
 
 playRound(humanSelection, computerSelection);
-
-
