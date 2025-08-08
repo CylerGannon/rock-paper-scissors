@@ -35,9 +35,17 @@ function playGame() {
     let computerScore = 0;
     let humanScore = 0;
 
+    const container = document.querySelector("#container");
+
     function playRound(humanChoice, computerChoice) {
         if(humanChoice == computerChoice) {
             console.log("It's a tie.");
+
+            let content = document.createElement("p");
+            content.classList.add("content");
+            content.textContent = "It's a tie";
+            container.appendChild(content);
+
         }
 
         if(humanChoice == "ROCK" && computerChoice == "PAPER") {
@@ -46,6 +54,12 @@ function playGame() {
             console.log("SCORE:\n");
             console.log("Human: " + humanScore + "\n");
             console.log("Computer: " + computerScore + "\n");
+
+            let content = document.createElement("p");
+            content.classList.add("content");
+            content.textContent = "Paper beats rock, computer wins!";
+            container.appendChild(content);
+
         } else {
             if(computerChoice == "ROCK" && humanChoice == "PAPER") {
                 humanScore++;
@@ -53,6 +67,11 @@ function playGame() {
                 console.log("SCORE:\n");
                 console.log("Human: " + humanScore + "\n");
                 console.log("Computer: " + computerScore + "\n");
+
+                let content = document.createElement("p");
+                content.classList.add("content");
+                content.textContent = "Paper beats rock, human wins!!";
+                container.appendChild(content);
             }
         }
         
@@ -62,6 +81,12 @@ function playGame() {
             console.log("SCORE:\n");
             console.log("Human: " + humanScore + "\n");
             console.log("Computer: " + computerScore + "\n");
+
+            let content = document.createElement("p");
+            content.classList.add("content");
+            content.textContent = "Scissors beats paper, computer wins!";
+            container.appendChild(content);
+
         } else {
             if(computerChoice == "PAPER" && humanChoice == "SCISSORS") {
                 humanScore++;
@@ -69,6 +94,11 @@ function playGame() {
                 console.log("SCORE:\n");
                 console.log("Human: " + humanScore + "\n");
                 console.log("Computer: " + computerScore + "\n");
+
+                let content = document.createElement("p");
+                content.classList.add("content");
+                content.textContent = "Scissors beats paper, human wins!";
+                container.appendChild(content);
             }
         }
 
@@ -78,6 +108,11 @@ function playGame() {
             console.log("SCORE:\n");
             console.log("Human: " + humanScore + "\n");
             console.log("Computer: " + computerScore + "\n");
+
+            let content = document.createElement("p");
+            content.classList.add("content");
+            content.textContent = "Rock beats scissors, human wins!";
+            container.appendChild(content);
             
         } else {
             if(computerChoice == "ROCK" && humanChoice == "SCISSORS") {
@@ -86,11 +121,16 @@ function playGame() {
                 console.log("SCORE:\n");
                 console.log("Human: " + humanScore + "\n");
                 console.log("Computer: " + computerScore + "\n");
+
+                let content = document.createElement("p");
+                content.classList.add("content");
+                content.textContent = "Rock beats scissors, computer wins!";
+                container.appendChild(content);
             }
         }
     }
 
-    for (let i =0; i < 5; i++) {
+    for (let i =0; i < 1; i++) {
         let humanSelection = getHumanChoice();
         console.log("humanSelection: " + humanSelection);
         let computerSelection = getComputerChoice();
