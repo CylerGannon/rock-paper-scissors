@@ -25,6 +25,64 @@ function getComputerChoice () {
     }
 }
 
+let computerScore = 0;
+let humanScore = 0;
+
+const container = document.querySelector("#container");
+const humanPlay = document.querySelector("#humanPlay");
+const computerPlay = document.querySelector("#computerPlay");
+const computerScoreH1 = document.querySelector("#computerScore");
+const humanScoreH1 = document.querySelector("#humanScore");
+
+function playRound(humanChoice, computerChoice) {
+
+    humanPlay.textContent = humanChoice;
+    computerPlay.textContent = computerChoice;
+
+    if(humanChoice == computerChoice) {
+        console.log("It's a tie.");
+    }
+
+    if(humanChoice == "ROCK" && computerChoice == "PAPER") {
+        computerScore++;
+        computerScoreH1.textContent = computerScore;
+        console.log("Paper beats rock, computer wins!");
+    } else {
+        if(computerChoice == "ROCK" && humanChoice == "PAPER") {
+            humanScore++;
+            humanScoreH1.textContent = humanScore;
+            console.log("Paper beats rock, human wins!");
+        }
+    }
+    
+    if(humanChoice == "PAPER" && computerChoice == "SCISSORS") {
+        computerScore++;
+        computerScoreH1.textContent = computerScore;
+        console.log("Scissors beats paper, computer wins!");
+    } else {
+        if(computerChoice == "PAPER" && humanChoice == "SCISSORS") {
+            humanScore++;
+            humanScoreH1.textContent = humanScore;
+            console.log("Scissors beats paper, human wins!");
+        }
+    }
+
+    if(humanChoice == "ROCK" && computerChoice == "SCISSORS") {
+        humanScore++;
+        humanScoreH1.textContent = humanScore;
+        console.log("Rock beats scissors, human wins!");
+    } else {
+        if(computerChoice == "ROCK" && humanChoice == "SCISSORS") {
+            computerScore++
+            computerScoreH1.textContent = computerScore;
+            console.log("Rock beats scissors, computer wins!");
+        }
+    }
+}
+
+
+
+/* 
 function getHumanChoice() {
   let choice = prompt("Please type rock, paper, or scissors");
   choice = choice.toUpperCase();
@@ -138,5 +196,5 @@ function playGame() {
         playRound(humanSelection, computerSelection);
     }
 }
-
+*/
 
